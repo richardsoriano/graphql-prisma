@@ -10,7 +10,7 @@ const getUserId = (request, requestAuth = true) =>{
         return decoded.userId   
     }
 
-    if (requireAuthor) {
+    if (requireAuth) {
         throw new Error('Authentication required')
     }
     return null
