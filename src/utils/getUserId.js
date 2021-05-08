@@ -6,7 +6,7 @@ const getUserId = (request, requestAuth = true) =>{
 
     if (header) {
         const token = header.replace('Bearer ', '')
-        const decoded = jwt.verify(token, 'thisisasecret')
+        const decoded = jwt.verify(token, process.env.PRISMA_AUTH_SECRET)
         return decoded.userId   
     }
 
